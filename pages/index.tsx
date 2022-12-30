@@ -2,14 +2,11 @@ import React from 'react'
 import Head from 'next/head'
 import { NextPage } from 'next'
 
-import { Movie } from '../models/Movie'
-
 import Layout from '../components/Layout'
 import Collection from '../components/Collection'
 import SearchBar from '../components/SearchBar'
 
-const Home: NextPage<Movie[]> = () => {
-
+const Home: NextPage = () => {
   return (
     <Layout>
       <Head>

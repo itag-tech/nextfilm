@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import { useSearch } from '../providers/SearchProvider'
 import { getMovies } from '../api/movieApi'
-import { getUrlSearchMovieByTitle } from '../utils/movieUtils'
+import { getUrlSearchMovieByTitle } from '../utils/movie'
 
 import MovieCard from '../components/Card'
 import { Spinner } from '../components/Spinner'
@@ -44,7 +44,7 @@ const Collection: FC = () => {
           <Link
             key={movie.imdbID}
             href={`/movie/${movie.imdbID}`}
-            as={`/movie/${movie.Title}`}
+          // as={`/movie/${movie.Title}`}
           >
             <MovieCard
               key={movie.imdbID}
