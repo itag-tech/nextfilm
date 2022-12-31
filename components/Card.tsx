@@ -1,9 +1,8 @@
 import { FC } from "react"
 import clsx from "clsx"
 import Image from "next/image"
-
+import { getPoster } from "../utils/movie"
 import { Movie } from "../models/Movie"
-import placeholderImage from "../public/placeholder-film.png"
 
 type CardProps = {
   movie: Movie
@@ -11,12 +10,10 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ movie }) => {
 
-  const poster = (movie.Poster === "N/A" && placeholderImage) || movie.Poster
-
   return (
     <div className={clsx("flex flex-col justify-center items-center bg-white bg-opacity-50 rounded-lg shadow-md truncate h-64 w-80")}>
       <Image
-        src={poster}
+        src={getPoster(movie)}
         alt={movie.Title}
         width={200}
         height={200}

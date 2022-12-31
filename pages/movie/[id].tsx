@@ -7,17 +7,16 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
 import { getMovie } from '../../api/movieApi'
-import { getUrlSearchMovieById } from '../../utils/movie'
+import { getPoster, getUrlSearchMovieById } from '../../utils/movie'
 
 import Layout from '../../components/Layout'
 import { Spinner } from '../../components/Spinner'
-import placeholderImage from "../../public/placeholder-film.png"
 
 const MovieDetail: NextPage = () => {
 
   const router = useRouter()
   const { id } = router.query
-  console.log(id)
+
   const url = React.useMemo<string>(() => getUrlSearchMovieById(id as string), [id])
   const fetcher = React.useCallback(async () => await getMovie(url), [url])
 
@@ -30,7 +29,7 @@ const MovieDetail: NextPage = () => {
     <Layout>
       <div className={clsx("flex flex-col justify-center items-center py-12")}>
         <Image
-          src={movie.Poster === "N/A" ? placeholderImage : movie?.Poster}
+          src={getPoster(movie)}
           alt={movie.Title}
           width={150}
           height={150}
