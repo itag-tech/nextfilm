@@ -1,11 +1,10 @@
 import axios from 'axios'
-import { Collection } from '../models/Collection'
+import { MovieCollectionResponse } from '../models/Collection'
 import { Movie } from '../models/Movie'
 
-export const getMovies = async (url: string): Promise<Collection> => {
+export const getMovies = async (url: string): Promise<MovieCollectionResponse> => {
   try {
     const response = await axios.get(url)
-
     // TODO - custom errors handling switch status code
     if (response.status !== 200) {
       console.error("Error calling API - collection route", response.status, url)
@@ -13,11 +12,11 @@ export const getMovies = async (url: string): Promise<Collection> => {
     }
 
     const { data } = response
-    return data as Collection
+    return data as MovieCollectionResponse
 
   } catch (error) {
     console.error("API call failed - collection route", error)
-    throw new Error("API call failed - collection route")
+    throw error
   }
 }
 
@@ -36,7 +35,7 @@ export const getMovie = async (url: string): Promise<Movie> => {
 
   } catch (error) {
     console.error("API call failed - movie route", error)
-    throw new Error("API call failed - movie route")
+    throw error
   }
 }
 

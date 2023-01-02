@@ -1,4 +1,4 @@
-export type Collection = {
+export type MovieCollectionResponse = {
   Response: string,
   totalResults?: string,
   Search?: Movie[],

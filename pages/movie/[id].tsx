@@ -27,7 +27,7 @@ const MovieDetail: NextPage = () => {
   if (!movie) return <Layout><p>Aucun résultat</p></Layout >
   return (
     <Layout>
-      <div className={clsx("flex flex-col justify-center items-center py-12")}>
+      <div className={clsx("flex flex-col justify-center items-center py-12 px-6")}>
         <Image
           src={getPoster(movie)}
           alt={movie.Title}
@@ -40,11 +40,18 @@ const MovieDetail: NextPage = () => {
         <p className={clsx("italic")}>{movie?.Year}</p>
         <p className={clsx("italic")}>{movie?.Actors}</p>
         <p className={clsx("italic")}>{movie?.Director}</p>
-        <div className={clsx("text-center w-1/2 bg-white rounded bg-opacity-50 m-12")}>
+        <div className={clsx("text-center w-4/5 md:w-1/2 bg-white rounded bg-opacity-50 my-12")}>
           <p className={clsx("p-2")}>
             {movie?.Plot}
           </p>
         </div>
+        <button
+          className={clsx("font-bold")}
+          onClick={() => router.back()}
+          aria-label="Revenir à la page précédente de recherche de films"
+        >
+          Précédent
+        </button>
       </div>
     </Layout>
   )

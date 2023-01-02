@@ -15,7 +15,7 @@ const SearchBar: FC = () => {
     <div id={"search-bar"} className={clsx("border-b-8 w-full text-center p-12")}>
       <input
         onChange={handleChange}
-        className={clsx("text-center rounded w-80 p-3")}
+        className={clsx("text-center rounded w-full md:max-w-md p-3")}
         value={search}
         placeholder="Rechercher un film"
       />

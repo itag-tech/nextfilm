@@ -1,17 +1,19 @@
 import { FC } from "react"
 import clsx from "clsx"
 import Image from "next/image"
-import { getPoster } from "../utils/movie"
-import { Movie } from "../models/Movie"
+import { getPoster } from "../../utils/movie"
+import { Movie } from "../../models/Movie"
 
 type CardProps = {
   movie: Movie
 }
 
 const Card: FC<CardProps> = ({ movie }) => {
-
   return (
-    <div className={clsx("flex flex-col justify-center items-center bg-white bg-opacity-50 rounded-lg shadow-md truncate h-64 w-80")}>
+    <div
+      className={clsx("flex flex-col justify-center items-center bg-white",
+        "bg-opacity-50 rounded-lg shadow-md truncate w-full p-6")}
+    >
       <Image
         src={getPoster(movie)}
         alt={movie.Title}

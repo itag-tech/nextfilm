@@ -3,17 +3,17 @@ import useSWR from 'swr'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-import { useSearch } from '../providers/SearchProvider'
-import { getMovies } from '../api/movieApi'
-import { getUrlSearchMovieByTitle } from '../utils/movie'
+import { useSearch } from '../../providers/SearchProvider'
+import { getMovies } from '../../api/movieApi'
+import { getUrlSearchMovieByTitle } from '../../utils/movie'
 
-import MovieCard from '../components/Card'
-import { Spinner } from '../components/Spinner'
+import MovieCard from '../Card/Card'
+import { Spinner } from '../Spinner'
 
 const Collection: FC = () => {
 
   const { search: inputValue } = useSearch()
-
+  console.log(inputValue)
   const isCallable: boolean = inputValue.length >= 3
   const url = React.useMemo<string>(() => getUrlSearchMovieByTitle(inputValue), [inputValue])
   const fetcher = React.useCallback(async () => await getMovies(url), [url])
@@ -39,12 +39,15 @@ const Collection: FC = () => {
   // case 4 - result
   if (isMovies) return (
     <CollectionLayout>
-      <div className={clsx("grid grid-cols-4 grid-rows-auto gap-4 w-full")}>
+      <div className={clsx(
+        "grid grid-cols-1 gap-1 grid-rows-auto w-full px-6",
+        "md:grid-cols-2 md:gap-2 md:px-0",
+        "lg:grid-cols-4 lg:gap-4")}>
         {movies.map((movie) => (
           <Link
             key={movie.imdbID}
             href={`/movie/${movie.imdbID}`}
-          // as={`/movie/${movie.Title}`}
+            title={`Accéder à la fiche du film ${movie.Title}`}
           >
             <MovieCard
               key={movie.imdbID}

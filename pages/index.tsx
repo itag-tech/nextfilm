@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { NextPage } from 'next'
 
 import Layout from '../components/Layout'
-import Collection from '../components/Collection'
+import Collection from '../components/Collection/Collection'
 import SearchBar from '../components/SearchBar'
 
 const Home: NextPage = () => {
