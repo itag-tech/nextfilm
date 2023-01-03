@@ -13,7 +13,7 @@ import { Spinner } from '../Spinner'
 const Collection: FC = () => {
 
   const { search: inputValue } = useSearch()
-  console.log(inputValue)
+
   const isCallable: boolean = inputValue.length >= 3
   const url = React.useMemo<string>(() => getUrlSearchMovieByTitle(inputValue), [inputValue])
   const fetcher = React.useCallback(async () => await getMovies(url), [url])
