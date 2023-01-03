@@ -27,7 +27,7 @@ const MovieDetail: NextPage = () => {
   if (!movie) return <Layout><p>Aucun résultat</p></Layout >
   return (
     <Layout>
-      <div className={clsx("flex flex-col justify-center items-center py-12 px-6")}>
+      <div className={clsx("flex flex-col justify-center items-center text-center py-12 px-6")}>
         <Image
           src={getPoster(movie)}
           alt={movie.Title}

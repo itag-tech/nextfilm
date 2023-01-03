@@ -22,7 +22,7 @@ const Card: FC<CardProps> = ({ movie }) => {
         className={clsx("h-32 w-32 object-cover shadow-lg")}
       />
       <div className={clsx("flex flex-col justify-center items-center")}>
-        <p className={clsx("text-xl font-medium truncate max-w-xs text-purple-700 m-4 px-6")}>{movie.Title}</p>
+        <p className={clsx("text-sm md:text-lg font-medium truncate max-w-xxs xl:max-w-xs text-purple-700 m-4 px-6")}>{movie.Title}</p>
         <p className={clsx("text-sm font-medium text-purple-400")}>{movie.Year}</p>
       </div>
     </div >

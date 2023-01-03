@@ -7,7 +7,11 @@ module.exports = withMT({
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      maxWidth: {
+        xxs: "12rem",
+      }
+    },
   },
   plugins: [],
 })
