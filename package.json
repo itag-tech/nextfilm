@@ -11,18 +11,17 @@
     "coverage": "vitest --coverage"
   },
   "dependencies": {
-    "@material-tailwind/react": "^1.2.4",
     "@next/font": "13.1.0",
-    "@storybook/react": "^6.5.15",
-    "clsx": "^1.2.1",
-    "dotenv": "^16.0.3",
+    "clsx": "1.2.1",
+    "dotenv": "16.0.3",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.0",
+    "msw": "0.49.2",
     "next": "13.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-svg-spinner": "^1.0.4",
-    "swr": "^2.0.0"
+    "react-svg-spinner": "1.0.4",
+    "swr": "2.0.0"
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
