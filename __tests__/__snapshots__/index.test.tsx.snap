@@ -1,0 +1,33 @@
+// Vitest Snapshot v1
+
+exports[`Home page > should render as usual 1`] = `
+<div>
+  <div
+    class="min-h-screen max-w-full overflow-x-hidden"
+  >
+    <div
+      class="container mx-auto my-24"
+    >
+      <h1
+        class="text-center text-6xl"
+      >
+        Nextflim
+      </h1>
+      <main
+        role="main"
+      >
+        <div
+          class="border-b-8 w-full text-center p-12"
+          id="search-bar"
+        >
+          <input
+            class="text-center rounded w-full md:max-w-md p-3"
+            placeholder="Rechercher un film"
+            value=""
+          />
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+`;
