@@ -21,7 +21,7 @@ exports[`Card > should render as usual 1`] = `
       class="flex flex-col justify-center items-center"
     >
       <p
-        class="text-sm md:text-lg font-medium truncate max-w-xxs  text-purple-700 m-4 px-6"
+        class="text-sm md:text-lg font-medium truncate max-w-xxs xl:max-w-xs text-purple-700 m-4 px-6"
       >
         The Lord of the Rings: The Fellowship of the Ring
       </p>
