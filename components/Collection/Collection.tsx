@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import { useSearch } from '../../providers/SearchProvider'
 import { getMovies } from '../../api/movieApi'
-import { getUrlSearchMovieByTitle } from '../../utils/movie'
+import { getUrlSearchMovieByTitle } from '../../utils/movieUtils'
 
 import MovieCard from '../Card/Card'
 import { Spinner } from '../Spinner'
@@ -17,9 +17,7 @@ const Collection: FC = () => {
   const isCallable: boolean = inputValue.length >= 3
   const url = React.useMemo<string>(() => getUrlSearchMovieByTitle(inputValue), [inputValue])
   const fetcher = React.useCallback(async () => await getMovies(url), [url])
-
   const { data, error, isLoading } = useSWR(isCallable ? url : null, fetcher)
-
   const movies = data?.Search || []
   const isMovies = movies.length > 0
 

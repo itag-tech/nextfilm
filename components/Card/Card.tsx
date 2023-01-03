@@ -1,7 +1,7 @@
 import { FC } from "react"
 import clsx from "clsx"
 import Image from "next/image"
-import { getPoster } from "../../utils/movie"
+import { getPoster } from "../../utils/movieUtils"
 import { Movie } from "../../models/Movie"
 
 type CardProps = {

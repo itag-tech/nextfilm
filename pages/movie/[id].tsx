@@ -7,7 +7,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
 import { getMovie } from '../../api/movieApi'
-import { getPoster, getUrlSearchMovieById } from '../../utils/movie'
+import { getPoster, getUrlSearchMovieById } from '../../utils/movieUtils'
 
 import Layout from '../../components/Layout'
 import { Spinner } from '../../components/Spinner'

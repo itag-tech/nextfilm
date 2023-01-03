@@ -1,6 +1,6 @@
 import { expect, it, describe } from 'vitest'
 import { Movie } from '../models/Movie'
-import { getUrlSearchMovieByTitle, getUrlSearchMovieById, getPoster } from './movie'
+import { getUrlSearchMovieByTitle, getUrlSearchMovieById, getPoster } from './movieUtils'
 
 describe('movieUtils - API objects & methods testing', () => {
   it('getUrlSearchMovieByTitle', () => {
