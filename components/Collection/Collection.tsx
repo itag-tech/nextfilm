@@ -37,12 +37,14 @@ const Collection: FC = () => {
   // case 4 - result
   if (isMovies) return (
     <CollectionLayout>
-      <div className={clsx(
-        "grid grid-cols-1 gap-1 grid-rows-auto w-full px-6",
-        "md:grid-cols-2 md:gap-2 md:px-0",
-        "lg:grid-cols-4 lg:gap-4")}>
+      <div
+        className={clsx(
+          "grid grid-cols-1 gap-1 grid-rows-auto w-full px-6",
+          "md:grid-cols-2 md:gap-2 md:px-0",
+          "lg:grid-cols-4 lg:gap-4")}>
         {movies.map((movie) => (
           <Link
+            data-testid="movie-link"
             key={movie.imdbID}
             href={`/movie/${movie.imdbID}`}
             title={`Accéder à la fiche du film ${movie.Title}`}
